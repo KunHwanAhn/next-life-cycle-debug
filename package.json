@@ -1,0 +1,43 @@
+{
+  "name": "next-life-cycle-debug",
+  "version": "1.0.0",
+  "main": "src/pages/index.ts",
+  "repository": "git@github.com:KunHwanAhn/next-life-cycle-debug.git",
+  "author": "Conan Kunhwan Ahn <kunhwon@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev | pino-pretty -t -c",
+    "build": "next build",
+    "start": "next start | pino-pretty -t -c",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^4.36.1",
+    "axios": "^1.7.9",
+    "core-js": "^3.40.0",
+    "next": "^15.1.7",
+    "pino": "^9.6.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
+    "eslint": "^8.46.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-config-next": "^13.4.12",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.33.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "pino-pretty": "^13.0.0",
+    "sass": "^1.85.0",
+    "typescript": "^5.3.3",
+    "typescript-eslint": "^8.24.1"
+  }
+}
