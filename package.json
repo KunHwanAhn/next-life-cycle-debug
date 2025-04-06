@@ -1,7 +1,6 @@
 {
   "name": "next-life-cycle-debug",
   "version": "1.0.0",
-  "main": "src/pages/index.ts",
   "repository": "git@github.com:KunHwanAhn/next-life-cycle-debug.git",
   "author": "Conan Kunhwan Ahn <kunhwon@gmail.com>",
   "license": "MIT",
