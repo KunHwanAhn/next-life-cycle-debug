@@ -1,16 +1,25 @@
+import React, { ReactNode } from 'react';
+
 import DefaultLayout from '@/components/DefaultLayout';
-import React, { PropsWithChildren } from 'react';
 
 import '@/styles/global.scss';
+import QueryProvider from '@/components/QueryProvider';
 
-interface RootLayoutProps extends PropsWithChildren {}
+interface RootLayoutProps {
+  children: ReactNode;
+}
 function RootLayout({ children }: RootLayoutProps) {
+  console.log('app - layout - component');
+
   return (
     <html lang="ko">
+      <title>Life cycle with Debugging</title>
       <body>
-        <DefaultLayout>
-          {children}
-        </DefaultLayout>
+        <QueryProvider>
+          <DefaultLayout>
+            {children}
+          </DefaultLayout>
+        </QueryProvider>
       </body>
     </html>
   );

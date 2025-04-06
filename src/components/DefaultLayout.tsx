@@ -5,6 +5,8 @@ interface DefaultLayoutProps {
   children: ReactNode;
 }
 export default function DefaultLayout({ children }:DefaultLayoutProps) {
+  console.log('components - DefaultLayout');
+
   return (
     <main>
       <div className={styles['main-container']}>
