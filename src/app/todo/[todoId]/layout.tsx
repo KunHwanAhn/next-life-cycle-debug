@@ -1,12 +1,10 @@
 import React from 'react';
 
-interface BlogDeatilLayoutProps {
+interface TodoItemLayoutProps {
   children: React.ReactNode
 }
-function BlogDeatilLayout({ children }: BlogDeatilLayoutProps) {
-  console.log('blog - post - layout - component');
-
-  return <section id="blog-post-layout">{children}</section>;
+function TodoItemLayout({ children }: TodoItemLayoutProps) {
+  return <section id="todo-item-layout">{children}</section>;
 }
 
-export default BlogDeatilLayout;
+export default TodoItemLayout;

@@ -1,13 +1,13 @@
 import React from 'react';
-import TodoList from './components/TodoList';
-import { getQueryClient } from '@/services/queryClient';
-import { GET_TODO_LIST_KEY } from './utils/queryKeys';
-import { getTodos } from '@/services';
 import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 
-async function TodoListPage() {
-  console.log('todo - page - component');
+import { getQueryClient } from '@/services/queryClient';
+import { getTodos } from '@/services';
 
+import { GET_TODO_LIST_KEY } from '../../utils/queryKeys';
+import TodoListWrapper from './components/TodoListWrapper';
+
+async function TodoListPage() {
   const queryClient = getQueryClient();
 
   await queryClient.prefetchQuery({
@@ -19,9 +19,8 @@ async function TodoListPage() {
     <div id="todo-page">
       <h1>TODO List</h1>
       <HydrationBoundary state={dehydrate(queryClient)}>
-        <TodoList />
+        <TodoListWrapper />
       </HydrationBoundary>
-
     </div>
   );
 }

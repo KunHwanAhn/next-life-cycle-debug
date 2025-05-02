@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import Link, { LinkProps } from 'next/link';
 
 import logger from '@/logger';
 
@@ -8,15 +8,16 @@ import styles from './TodoItem.module.scss';
 export interface TodoItemProps {
   id: number;
   text: string;
+  url: LinkProps['href'];
 }
-export default function TodoItem({ id, text }: TodoItemProps) {
+export default function TodoItem({ id, text, url }: TodoItemProps) {
   const removeTodo = (targetId: number) => {
     logger.info(`remove ${targetId}`);
   };
 
   return (
     <li className={styles['todo-item']}>
-      <Link href={`/${id}`}>
+      <Link href={url}>
         {text}
       </Link>
       <button

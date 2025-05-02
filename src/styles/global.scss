@@ -49,10 +49,12 @@ table {
 :root {
   --border-radius: 4px;
   --content-max-width: 1024px;
+  --font-roboto: 'Roboto';
+  --font-noto-sans-kr: 'Noto Sans KR';
 }
 
 * {
-  font-family: Roboto, Noto Sans KR, -apple-system, Arial, sans-serif;
+  font-family: var(--font-roboto), var(--font-noto-sans-kr), -apple-system, Arial, sans-serif;
   box-sizing: border-box;
 
   ::before {

@@ -31,11 +31,12 @@ module.exports = {
       ],
       rules: {
         'import/extensions': 'off',
-        'max-len': {
+        'react/require-default-props': 'off',
+        'max-len': ['error', {
           code: 150,
           ignoreComments: true,
           ignorePattern: '^import\\s.+\\sfrom\\s.+$',
-        },
+        }],
       },
     },
   ],

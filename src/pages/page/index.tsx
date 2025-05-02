@@ -1,14 +1,14 @@
-import { ROUTE } from '@/constants';
 import Link from 'next/link';
 import React from 'react';
+import { ROUTE } from '@/constants';
 
-function AppPage() {
+function PagesMain() {
   return (
     <div id="app-page">
       <h1>Hello, Next.js!</h1>
-      <Link href={ROUTE.TODO}>Todo</Link>
+      <Link href={ROUTE.PAGE.TODO}>Todo</Link>
     </div>
   );
 }
 
-export default AppPage;
+export default PagesMain;
