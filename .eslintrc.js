@@ -29,6 +29,14 @@ module.exports = {
         'airbnb',
         'airbnb-typescript',
       ],
+      rules: {
+        'import/extensions': 'off',
+        'max-len': {
+          code: 150,
+          ignoreComments: true,
+          ignorePattern: '^import\\s.+\\sfrom\\s.+$',
+        },
+      },
     },
   ],
 };

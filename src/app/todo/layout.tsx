@@ -1,3 +1,5 @@
+import { getQueryClient } from '@/services/queryClient';
+import { Todo } from '@/types';
 import { Metadata } from 'next';
 import React from 'react';
 
@@ -12,8 +14,11 @@ function TodoListLayout({ children }: BlogLayoutProps) {
 
 export const generateMetadata = async (): Promise<Metadata> => {
   console.log('TodoList - layout - generateMetadata');
+  const queryClient = getQueryClient();
 
-  return { title: 'TodoList' };
+  const todos = queryClient.getQueryData<Todo[]>(['todoList']);
+
+  return { title: `TodoList - ${todos?.length ?? 0}` };
 };
 
 export default TodoListLayout;
