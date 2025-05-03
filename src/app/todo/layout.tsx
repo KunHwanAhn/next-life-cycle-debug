@@ -8,6 +8,6 @@ function TodoListLayout({ children }: BlogLayoutProps) {
   return <section id="todo-list-layout">{children}</section>;
 }
 
-export const generateMetadata = async (): Promise<Metadata> => ({ title: 'TodoList' });
+export const generateMetadata = async (): Promise<Metadata> => ({ title: 'Todo List' });
 
 export default TodoListLayout;

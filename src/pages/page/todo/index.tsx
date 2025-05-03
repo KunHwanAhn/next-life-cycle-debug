@@ -6,6 +6,7 @@ import { GET_TODO_LIST_KEY, GetTodoListKey } from '@/utils/queryKeys';
 import { getTodos } from '@/services';
 import { Todo } from '@/types';
 import { AxiosError } from 'axios';
+import Head from 'next/head';
 
 interface TodoListProps {
   dehydrateState: DehydratedState;
@@ -27,12 +28,15 @@ export const getServerSideProps: GetServerSideProps<TodoListProps> = async () =>
 
 function TodoListPage() {
   return (
-    <section id="todo-list-layout">
+    <>
+      <Head>
+        <title>Todo List</title>
+      </Head>
       <div id="todo-page">
         <h1>TODO List</h1>
         <TodoList />
       </div>
-    </section>
+    </>
   );
 }
 

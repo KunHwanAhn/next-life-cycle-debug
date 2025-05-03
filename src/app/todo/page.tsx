@@ -16,7 +16,7 @@ async function TodoListPage() {
   });
 
   return (
-    <div id="todo-page">
+    <div id="todo-list-page">
       <h1>TODO List</h1>
       <HydrationBoundary state={dehydrate(queryClient)}>
         <TodoListWrapper />

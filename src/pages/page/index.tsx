@@ -4,7 +4,7 @@ import { ROUTE } from '@/constants';
 
 function PagesMain() {
   return (
-    <div id="app-page">
+    <div id="page-main">
       <h1>Hello, Next.js!</h1>
       <Link href={ROUTE.PAGE.TODO}>Todo</Link>
     </div>

@@ -4,7 +4,7 @@ import React from 'react';
 
 function AppPage() {
   return (
-    <div id="app-page">
+    <div id="app-main">
       <h1>Hello, Next.js!</h1>
       <Link href={ROUTE.TODO}>Todo</Link>
     </div>
