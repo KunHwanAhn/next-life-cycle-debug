@@ -1,27 +1,20 @@
 import React from 'react';
 import { AppProps } from 'next/app';
 import {
-  DehydratedState, HydrationBoundary, QueryClient, QueryClientProvider,
+  DehydratedState, HydrationBoundary, QueryClientProvider,
 } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import DefaultLayout from '@/components/DefaultLayout/DefaultLayout';
 
 import '@/styles/global.scss';
 import { notoSansKR, roboto } from '@/utils/fonts';
-
-const DEFAULT_STALE_TIME = 1000 * 60;
+import { createQueryClientWithStaleTime } from '@/services/queryClient';
 
 interface AppCommonProps {
   dehydrateState: DehydratedState;
 }
 function RootApp({ Component, pageProps }: AppProps<AppCommonProps>) {
-  const [queryClient] = React.useState(() => new QueryClient({
-    defaultOptions: {
-      queries: {
-        staleTime: DEFAULT_STALE_TIME,
-      },
-    },
-  }));
+  const [queryClient] = React.useState(() => createQueryClientWithStaleTime());
 
   const { dehydrateState, ...componentProps } = pageProps;
 
