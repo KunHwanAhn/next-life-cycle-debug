@@ -1,14 +1,14 @@
 import React from 'react';
-import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
+import { Metadata } from 'next';
+import { HydrationBoundary, QueryClient, dehydrate } from '@tanstack/react-query';
 
-import { getQueryClient } from '@/services/queryClient';
 import { getTodos } from '@/services';
 
 import { GET_TODO_LIST_KEY } from '../../utils/queryKeys';
 import TodoListWrapper from './components/TodoListWrapper';
 
 async function TodoListPage() {
-  const queryClient = getQueryClient();
+  const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
     queryKey: GET_TODO_LIST_KEY,
@@ -24,5 +24,7 @@ async function TodoListPage() {
     </div>
   );
 }
+
+export const generateMetadata = async (): Promise<Metadata> => ({ title: 'Todo List' });
 
 export default TodoListPage;

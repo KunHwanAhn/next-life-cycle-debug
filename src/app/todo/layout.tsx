@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import React from 'react';
 
 interface BlogLayoutProps {
@@ -7,7 +6,5 @@ interface BlogLayoutProps {
 function TodoListLayout({ children }: BlogLayoutProps) {
   return <section id="todo-list-layout">{children}</section>;
 }
-
-export const generateMetadata = async (): Promise<Metadata> => ({ title: 'Todo List' });
 
 export default TodoListLayout;
