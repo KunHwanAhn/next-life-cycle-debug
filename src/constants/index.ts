@@ -2,10 +2,12 @@ export const ROUTE = {
   INDEX: '/',
   TODO: '/todo',
   TODO_ITEM: '/todo/[todoId]',
+  TABS: '/tabs',
   PAGE: {
     INDEX: '/page',
     TODO: '/page/todo',
     TODO_ITEM: '/page/todo/[todoId]',
+    TABS: '/page/tabs',
   },
 } as const;
 
