@@ -1,6 +1,8 @@
 import React, { useCallback } from 'react';
+
 import { ROUTE } from '@/constants';
-import useGetTodoList from '../../hooks/useGetTodoList';
+import useGetTodoList from '@/hooks/useGetTodoList';
+
 import TodoListItem from './components/TodoListItem';
 
 export interface TodoListProps {
