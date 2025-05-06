@@ -1,7 +1,6 @@
 {
   "name": "next-life-cycle-debug",
   "version": "1.0.0",
-  "main": "src/pages/index.ts",
   "repository": "git@github.com:KunHwanAhn/next-life-cycle-debug.git",
   "author": "Conan Kunhwan Ahn <kunhwon@gmail.com>",
   "license": "MIT",
@@ -12,7 +11,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@tanstack/react-query": "^4.36.1",
+    "@tanstack/react-query": "^5.74.11",
+    "@tanstack/react-query-devtools": "^5.74.11",
     "axios": "^1.7.9",
     "core-js": "^3.40.0",
     "next": "^15.2.4",
@@ -23,8 +23,8 @@
   },
   "devDependencies": {
     "@types/node": "^20.9.0",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
+    "@types/react": "^18.3.20",
+    "@types/react-dom": "^18.3.6",
     "@typescript-eslint/eslint-plugin": "^6.2.0",
     "@typescript-eslint/parser": "^6.2.0",
     "eslint": "^8.46.0",

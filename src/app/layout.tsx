@@ -1,16 +1,24 @@
+import React, { ReactNode } from 'react';
+
 import DefaultLayout from '@/components/DefaultLayout';
-import React, { PropsWithChildren } from 'react';
 
 import '@/styles/global.scss';
+import QueryProvider from '@/components/QueryProvider';
+import { notoSansKR, roboto } from '@/utils/fonts';
 
-interface RootLayoutProps extends PropsWithChildren {}
+interface RootLayoutProps {
+  children: ReactNode;
+}
 function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="ko">
+    <html lang="ko" className={`${roboto.variable} ${notoSansKR.variable}`}>
+      <title>Life cycle with Debugging</title>
       <body>
-        <DefaultLayout>
-          {children}
-        </DefaultLayout>
+        <QueryProvider>
+          <DefaultLayout>
+            {children}
+          </DefaultLayout>
+        </QueryProvider>
       </body>
     </html>
   );
