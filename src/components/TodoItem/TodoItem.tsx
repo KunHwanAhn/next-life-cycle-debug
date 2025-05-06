@@ -1,13 +1,16 @@
 import React from 'react';
 
-import { Todo } from '@/types';
 import useGetTodoItem from '@/hooks/useGetTodoItem';
+
+import style from './TodoItem.module.scss';
 
 export interface TodoItemProps {
   todoId: string;
 }
 function TodoItem({ todoId }: TodoItemProps) {
-  const { todoItem, isSuccess, isError, isLoading, isRefetching } = useGetTodoItem({ todoId });
+  const {
+    todoItem, isSuccess, isError, isLoading, isRefetching,
+  } = useGetTodoItem({ todoId });
 
   if (isLoading || isRefetching) {
     return <div>Loading...</div>;
@@ -20,7 +23,7 @@ function TodoItem({ todoId }: TodoItemProps) {
   }
 
   return (
-    <div>
+    <div className={style['todo-item-container']}>
       <h2>{`Todo ID: ${todoItem.id}`}</h2>
       <p>{`Title: ${todoItem.title}`}</p>
       <p>{`Completed: ${todoItem.completed ? 'Yes' : 'No'}`}</p>
