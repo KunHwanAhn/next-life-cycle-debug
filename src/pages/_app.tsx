@@ -8,13 +8,13 @@ import DefaultLayout from '@/components/DefaultLayout/DefaultLayout';
 
 import '@/styles/global.scss';
 import { notoSansKR, roboto } from '@/utils/fonts';
-import { createQueryClientWithStaleTime } from '@/services/queryClient';
+import { createQueryClient } from '@/services/queryClient';
 
 interface AppCommonProps {
   dehydrateState: DehydratedState;
 }
 function RootApp({ Component, pageProps }: AppProps<AppCommonProps>) {
-  const [queryClient] = React.useState(() => createQueryClientWithStaleTime());
+  const [queryClient] = React.useState(() => createQueryClient());
 
   const { dehydrateState, ...componentProps } = pageProps;
 

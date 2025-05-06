@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import { ROUTE } from '@/constants';
-import useGetTodoList from '../hooks/useGetTodoList';
-import TodoItem from './TodoItem';
+import useGetTodoList from '../../hooks/useGetTodoList';
+import TodoListItem from './components/TodoListItem';
 
-interface TodoListProps {
+export interface TodoListProps {
   isAppRouter?: boolean;
 }
 function TodoList({ isAppRouter = false }: TodoListProps) {
@@ -28,7 +28,7 @@ function TodoList({ isAppRouter = false }: TodoListProps) {
   return (
     <div>
       {todoList.map((todo) => (
-        <TodoItem
+        <TodoListItem
           key={todo.id}
           id={todo.id}
           text={todo.title}

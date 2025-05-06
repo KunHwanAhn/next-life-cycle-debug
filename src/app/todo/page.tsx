@@ -1,17 +1,19 @@
+import { AxiosError } from 'axios';
 import React from 'react';
 import { Metadata } from 'next';
 import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 
 import { getTodos } from '@/services';
 import { createQueryClient } from '@/services/queryClient';
+import { Todo } from '@/types';
 
-import { GET_TODO_LIST_KEY } from '../../utils/queryKeys';
+import { GET_TODO_LIST_KEY, GetTodoListKey } from '../../utils/queryKeys';
 import TodoListWrapper from './components/TodoListWrapper';
 
 async function TodoListPage() {
   const queryClient = createQueryClient();
 
-  await queryClient.prefetchQuery({
+  await queryClient.prefetchQuery<Todo[], AxiosError, Todo[], GetTodoListKey>({
     queryKey: GET_TODO_LIST_KEY,
     queryFn: () => getTodos(),
   });

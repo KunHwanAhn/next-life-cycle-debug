@@ -3,14 +3,14 @@ import Link, { LinkProps } from 'next/link';
 
 import logger from '@/logger';
 
-import styles from './TodoItem.module.scss';
+import styles from './TodoListItem.module.scss';
 
-export interface TodoItemProps {
+export interface TodoListItemProps {
   id: number;
   text: string;
   url: LinkProps['href'];
 }
-export default function TodoItem({ id, text, url }: TodoItemProps) {
+export default function TodoListItem({ id, text, url }: TodoListItemProps) {
   const removeTodo = (targetId: number) => {
     logger.info(`remove ${targetId}`);
   };

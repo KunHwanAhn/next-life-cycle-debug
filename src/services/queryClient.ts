@@ -2,12 +2,11 @@ import { QueryClient } from '@tanstack/react-query';
 
 const DEFAULT_STALE_TIME = 1000 * 60;
 
-export const createQueryClient = (): QueryClient => new QueryClient();
-
-export const createQueryClientWithStaleTime = (): QueryClient => new QueryClient({
+// eslint-disable-next-line import/prefer-default-export
+export const createQueryClient = (staleTime: number = DEFAULT_STALE_TIME): QueryClient => new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: DEFAULT_STALE_TIME,
+      staleTime,
     },
   },
 });
