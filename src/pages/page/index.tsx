@@ -26,9 +26,7 @@ function PagesMain() {
         <li>
           <Link href={ROUTE.TODO}>Todo</Link>
         </li>
-        <li>
-          <Link href={ROUTE.TABS}>Tabs</Link>
-        </li>
+
       </ul>
     </div>
   );

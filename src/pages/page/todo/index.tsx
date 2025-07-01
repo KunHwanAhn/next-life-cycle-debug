@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { use, useEffect } from 'react';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import { AxiosError } from 'axios';
@@ -28,6 +28,10 @@ export const getServerSideProps: GetServerSideProps<TodoListProps> = async () =>
 };
 
 function TodoListPage() {
+  useEffect(() => {
+    console.log('TodoListPage mounted');
+  }, []);
+
   return (
     <>
       <Head>

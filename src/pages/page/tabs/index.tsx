@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { GetServerSideProps } from 'next';
 import { DehydratedState, dehydrate } from '@tanstack/react-query';
 
