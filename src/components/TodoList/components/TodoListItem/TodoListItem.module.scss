@@ -1,4 +1,4 @@
-@import '~@/styles/mixins.scss';
+@use '~@/styles/mixins.scss' as mixins;
 
 .todo-item {
   display: flex;
@@ -20,7 +20,7 @@
     margin-block-start: 0.5rem;
   }
 
-  @include desktop {
+  @include mixins.desktop {
     font-size: 2rem;
   }
 }
