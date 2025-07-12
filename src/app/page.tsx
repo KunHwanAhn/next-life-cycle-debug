@@ -6,7 +6,28 @@ function AppPage() {
   return (
     <div id="app-main">
       <h1>Hello, Next.js!</h1>
-      <Link href={ROUTE.TODO}>Todo</Link>
+      <hr />
+      <ul>
+        <li>
+          <Link href={ROUTE.INDEX}>App Router Index</Link>
+        </li>
+        <li>
+          <Link href={ROUTE.TODO}>Todo</Link>
+        </li>
+      </ul>
+      <hr />
+      <h2>Page Router</h2>
+      <ul>
+        <li>
+          <Link href={ROUTE.PAGE.INDEX}>Page Router Index</Link>
+        </li>
+        <li>
+          <Link href={ROUTE.PAGE.TODO}>Todo</Link>
+        </li>
+        <li>
+          <Link href={ROUTE.PAGE.TABS}>Tabs</Link>
+        </li>
+      </ul>
     </div>
   );
 }

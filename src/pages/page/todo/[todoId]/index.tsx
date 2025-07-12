@@ -1,5 +1,5 @@
 import { AxiosError } from 'axios';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { DehydratedState, dehydrate } from '@tanstack/react-query';
 import { GetServerSideProps } from 'next';
 
@@ -43,6 +43,11 @@ export const getServerSideProps: GetServerSideProps<TodoItemPagePropsWithDehydra
 };
 
 function TodoItemPage({ todoId }: TodoItemPageProps) {
+  useEffect(() => {
+    // eslint-disable-next-line no-console
+    console.log('TodoItemPage mounted');
+  }, []);
+
   return (
     <div id="todo-item-page">
       <h1>{'Hello, I\'m todo detail!'}</h1>

@@ -6,7 +6,7 @@ import { createQueryClient } from '@/services/queryClient';
 import { TodoItemKey, getTodoItemKey } from '@/utils/queryKeys';
 import { Todo } from '@/types';
 import { getTodo } from '@/services';
-import TodoItemWrapper from './components/TodoItemWrapper';
+import TodoItemWrapper from '../../components/TodoItemWrapper';
 
 type TodoItemPageParams = {
   todoId: string;

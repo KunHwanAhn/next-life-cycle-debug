@@ -2,7 +2,7 @@ import { UseQueryResult, useQuery } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
 import { getTodos } from '@/services';
 import { Todo } from '@/types';
-import { GET_TODO_LIST_KEY, TodoListKey } from '@/utils/queryKeys';
+import { TODO_LIST_KEY, TodoListKey } from '@/utils/queryKeys';
 
 interface UseGetTodoListResultBase extends Pick<UseQueryResult, 'isSuccess' | 'isLoading' | 'isRefetching' | 'isError'> {
   todoList: Todo[] | undefined;
@@ -47,7 +47,7 @@ const useGetTodoList: UseGetTodoList = () => {
   const {
     data: todoList, isSuccess, isError, isLoading, isRefetching,
   } = useQuery<Todo[], AxiosError, Todo[], TodoListKey>({
-    queryKey: GET_TODO_LIST_KEY,
+    queryKey: TODO_LIST_KEY,
     queryFn: () => getTodos(),
   });
 
