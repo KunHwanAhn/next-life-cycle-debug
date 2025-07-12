@@ -27,6 +27,7 @@ export const getServerSideProps: GetServerSideProps<TabsPagePropsWithDehydrate> 
       queryFn: () => getTodos(),
     });
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error('Error fetching todo list:', error);
   }
 

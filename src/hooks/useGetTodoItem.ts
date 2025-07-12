@@ -1,15 +1,17 @@
-import { getTodo } from "@/services";
-import { Todo } from "@/types";
-import { TodoItemKey, getTodoItemKey } from "@/utils/queryKeys";
-import { useQuery } from "@tanstack/react-query";
-import { AxiosError } from "axios";
+import { getTodo } from '@/services';
+import { Todo } from '@/types';
+import { TodoItemKey, getTodoItemKey } from '@/utils/queryKeys';
+import { useQuery } from '@tanstack/react-query';
+import { AxiosError } from 'axios';
 
 interface UseGetTodoItemParams {
   todoId: string;
 }
 
 const useGetTodoItem = ({ todoId }: UseGetTodoItemParams) => {
-  const { data, isSuccess, isError, isLoading, isRefetching } = useQuery<Todo, AxiosError, Todo, TodoItemKey>({
+  const {
+    data, isSuccess, isError, isLoading, isRefetching,
+  } = useQuery<Todo, AxiosError, Todo, TodoItemKey>({
     queryKey: getTodoItemKey(todoId),
     queryFn: () => getTodo({ todoId }),
   });
@@ -61,6 +63,6 @@ const useGetTodoItem = ({ todoId }: UseGetTodoItemParams) => {
     isRefetching: false,
     isError: false,
   };
-}
+};
 
 export default useGetTodoItem;

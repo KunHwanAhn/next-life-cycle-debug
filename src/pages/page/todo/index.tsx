@@ -29,6 +29,7 @@ export const getServerSideProps: GetServerSideProps<TodoListProps> = async () =>
 
 function TodoListPage() {
   useEffect(() => {
+    // eslint-disable-next-line no-console
     console.log('TodoListPage mounted');
   }, []);
 
