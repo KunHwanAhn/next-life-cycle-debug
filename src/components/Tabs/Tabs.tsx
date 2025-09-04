@@ -15,6 +15,7 @@ function Tabs<TabsChildProps>({ tabIds, children }: TabsProps<TabsChildProps>) {
   }
 
   const handleTabClick = (newTabId: string) => {
+    // NOTE: shallow routing을 위해서는 true로 설정해야 함
     setTab(newTabId, false);
   };
 

@@ -9,14 +9,21 @@ import DefaultLayout from '@/components/DefaultLayout/DefaultLayout';
 import '@/styles/global.scss';
 import { notoSansKR, roboto } from '@/utils/fonts';
 import { createQueryClient } from '@/services/queryClient';
+import { NextPageContext } from 'next';
 
 interface AppCommonProps {
   dehydrateState: DehydratedState;
+  appProp1: string;
+  appProp2: string;
 }
-function RootApp({ Component, pageProps }: AppProps<AppCommonProps>) {
+function RootApp({
+  Component, pageProps,
+}: AppProps<AppCommonProps>) {
   const [queryClient] = React.useState(() => createQueryClient());
 
-  const { dehydrateState, ...componentProps } = pageProps;
+  const {
+    dehydrateState, appProp1, appProp2, ...componentProps
+  } = pageProps;
 
   return (
     <main className={`${roboto.className} ${notoSansKR.className}`}>
@@ -32,5 +39,16 @@ function RootApp({ Component, pageProps }: AppProps<AppCommonProps>) {
     </main>
   );
 }
+
+RootApp.getInitialProps = async ({ asPath }: NextPageContext) => {
+  console.log('App getInitialProps', asPath);
+
+  return {
+    pageProps: {
+      appProp1: 'value1',
+      appProp2: 'value2',
+    },
+  };
+};
 
 export default RootApp;

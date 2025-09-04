@@ -9,6 +9,7 @@ import { Todo } from '@/types';
 import { getTodo } from '@/services';
 import { ROUTE } from '@/constants';
 import TodoItem from '@/components/TodoItem';
+import Head from 'next/head';
 
 interface TodoItemPageProps {
   todoId: string;
@@ -49,11 +50,18 @@ function TodoItemPage({ todoId }: TodoItemPageProps) {
   }, []);
 
   return (
-    <div id="todo-item-page">
-      <h1>{'Hello, I\'m todo detail!'}</h1>
-      <hr />
-      <TodoItem todoId={todoId} />
-    </div>
+    <>
+      <Head>
+        <title>
+          {`Todo Item ${todoId}`}
+        </title>
+      </Head>
+      <div id="todo-item-page">
+        <h1>{'Hello, I\'m todo detail!'}</h1>
+        <hr />
+        <TodoItem todoId={todoId} />
+      </div>
+    </>
   );
 }
 
