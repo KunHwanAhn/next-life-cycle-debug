@@ -6,6 +6,7 @@ import { createQueryClient } from '@/services/queryClient';
 import { TodoItemKey, getTodoItemKey } from '@/utils/queryKeys';
 import { Todo } from '@/types';
 import { getTodo } from '@/services';
+import { Metadata } from 'next';
 import TodoItemWrapper from '../../components/TodoItemWrapper';
 
 type TodoItemPageParams = {
@@ -33,5 +34,11 @@ async function TodoItemPage({ params }: TodoItemPageProps) {
     </div>
   );
 }
+
+export const generateMetadata = async ({ params }: TodoItemPageProps): Promise<Metadata> => {
+  const { todoId } = await params;
+
+  return { title: `Todo ${todoId}` };
+};
 
 export default TodoItemPage;
