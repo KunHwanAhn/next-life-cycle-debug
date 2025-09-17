@@ -9,6 +9,7 @@ import { createQueryClient } from '@/services/queryClient';
 import { Todo } from '@/types';
 import { TODO_LIST_KEY, TodoListKey } from '@/utils/queryKeys';
 import { getTodos } from '@/services';
+import Head from 'next/head';
 
 interface TabsPageProps {
   tabIds: string[];
@@ -41,17 +42,23 @@ export const getServerSideProps: GetServerSideProps<TabsPagePropsWithDehydrate> 
   };
 };
 
-function TabsPage({ tabIds }: TabsPageProps) {
+function TabsPage(props: TabsPageProps) {
+  const { tabIds } = props;
   return (
-    <div id="tabs-page">
-      <h1>Tabs</h1>
-      <hr />
-      <Tabs tabIds={tabIds}>
-        {tabIds.map<React.ReactElement>((tabId) => (
-          <TodoItem key={tabId} todoId={tabId} />
-        ))}
-      </Tabs>
-    </div>
+    <>
+      <Head>
+        <title>Tabs Page</title>
+      </Head>
+      <div id="tabs-page">
+        <h1>Tabs</h1>
+        <hr />
+        <Tabs tabIds={tabIds}>
+          {tabIds.map<React.ReactElement>((tabId) => (
+            <TodoItem key={tabId} todoId={tabId} />
+          ))}
+        </Tabs>
+      </div>
+    </>
   );
 }
 
